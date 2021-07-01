@@ -2,7 +2,7 @@
       var refaddr = document.getElementById("refaddress").value;
       var reflink = document.getElementById("refht");
       reflink.href = '/airdrop/?ref=' + refaddr;
-      reflink.innerHTML = 'tokenbalibnb.com/airdrop/?ref=' + refaddr;
+      reflink.innerHTML = '/airdrop/?ref=' + refaddr;
       document.getElementById('refs').style.display = 'block';
     }
     function copyToClipboard(id) {
