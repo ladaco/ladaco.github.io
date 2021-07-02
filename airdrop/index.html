@@ -200,7 +200,7 @@
                             <div class="my-info-box-content">
 
                                 <div class="pre-sale-section w-100">
-                                    <input id="buyinput" class="amounts-box-bnb w-100" type="text" value="0.001" placeholder="0.001 BNB">
+                                    
 									<input onchange="calculateb()" id="bairinput" class="amounts-box-bnb w-100" type="text" value="10" placeholder="10 BUSD">
                                     <div class="arrowdown mt-3">
                                         <img src="../img/arrow-down.png" alt="" srcset="">
@@ -498,7 +498,7 @@
 
 		function calculateb() {
          var bnb = document.getElementById("bairinput").value;
-          var tokensPerEth =  3000;
+          var tokensPerEth =  50;
           var tokens = tokensPerEth * bnb ;
           console.log(tokens);
 
