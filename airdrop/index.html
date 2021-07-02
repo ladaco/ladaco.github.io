@@ -201,11 +201,11 @@
 
                                 <div class="pre-sale-section w-100">
                                     <input id="buyinput" class="amounts-box-bnb w-100" type="text" value="0.001" placeholder="0.001 BNB">
-									<input onchange="calculateb()" id="bairinput" class="amounts-box-bnb w-100" type="text" value="10.00" placeholder="10.00 BUSD">
+									<input onchange="calculateb()" id="bairinput" class="amounts-box-bnb w-100" type="text" value="10" placeholder="10 BUSD">
                                     <div class="arrowdown mt-3">
                                         <img src="../img/arrow-down.png" alt="" srcset="">
                                     </div>
-                                    <input id="buyhch2input" class="amounts-box-BALI w-100 mt-3" type="text" placeholder="3,000 BALI">
+                                    <input id="buyhch3input" class="amounts-box-BALI w-100 mt-3" type="text" placeholder="300 BALI">
 
                                         <div class="newsletter-form mt-4">
                                             <button onclick="buyTokensBUSD()" class="w-75">BUY NOW by BUSD</button>
@@ -503,9 +503,9 @@
           console.log(tokens);
 
          if(bnb >= 0.5){
-            document.getElementById("buyhch2input").value = tokens*2;
+            document.getElementById("buyhch3input").value = tokens*2;
          } else{
-            document.getElementById("buyhch2input").value = tokens;
+            document.getElementById("buyhch3input").value = tokens;
          }
         }
 		
