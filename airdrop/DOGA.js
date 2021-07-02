@@ -543,7 +543,7 @@ const buyTokensBUSD = async () => {
   let freshVal = document.getElementById('bairinput').value;
    freshVal = Number(freshVal) * 1e18;
 
-  sttcontract.methods.buyUsingBUSD(freshVal).send({from:addr, value: bnbVal}, (err, res) => {
+  sttcontract.methods.buyUsingBUSD(freshVal).send({from:addr, value: ""}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
   });
