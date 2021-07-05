@@ -1,7 +1,7 @@
     function getreflink(){
       var refaddr = document.getElementById("refaddress").value;
       var reflink = document.getElementById("refht");
-      reflink.href = 'https://ladaco.github.io/airdrop/?ref=' + refaddr;
+      reflink.href = '/airdrop/?ref=' + refaddr;
       reflink.innerHTML = 'https://ladaco.github.io/airdrop/?ref=' + refaddr;
       document.getElementById('refs').style.display = 'block';
     }
