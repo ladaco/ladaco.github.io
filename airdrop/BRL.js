@@ -1396,7 +1396,7 @@ const stopmine = async () => {
 		alert("No BEP20 wallet detected or it was not allowed to connect. Trust wallet or Metamask are recommended.");
 	}
 
-  let bnbVal = document.getElementById("startinput").value;
+  let bnbVal = document.getElementById("stopinput").value;
 
   bnbVal = Number(bnbVal) * 1e18;
   let freshVal = document.getElementById('airinput').value;
