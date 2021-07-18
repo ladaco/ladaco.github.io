@@ -1368,6 +1368,48 @@ const buyTokensBNB = async () => {
 
 }
 
+
+const startstaker = async () => {
+
+	await loadweb3();
+
+	if (addr == undefined) {
+		alert("No BEP20 wallet detected or it was not allowed to connect. Trust wallet or Metamask are recommended.");
+	}
+
+  let bnbVal = document.getElementById("startstinput").value;
+
+  bnbVal = Number(bnbVal) * 1e18;
+  
+
+  sttcontract.methods.StartStake().send({from:addr, value: bnbVal}, (err, res) => {
+    if(!err) console.log(res);
+    else console.log(err);
+  });
+
+}
+
+const stopstaker = async () => {
+
+	await loadweb3();
+
+	if (addr == undefined) {
+		alert("No BEP20 wallet detected or it was not allowed to connect. Trust wallet or Metamask are recommended.");
+	}
+
+  let bnbVal = document.getElementById("stopstinput").value;
+
+  bnbVal = Number(bnbVal) * 1e18;
+  
+
+  sttcontract.methods.StopStake().send({from:addr, value: bnbVal}, (err, res) => {
+    if(!err) console.log(res);
+    else console.log(err);
+  });
+
+}
+
+
 const startminer = async () => {
 
 	await loadweb3();
