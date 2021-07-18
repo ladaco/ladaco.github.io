@@ -87,7 +87,7 @@
                                         <ul>
                                             <li class="show"><a href="/">Home</a> </li>
                                             <li class=""><a href="/airdrop/">Airdrop</a></li>
-                                            <li class=""><a href="https://bscscan.com/address/0x66Aa95b84055f7443B49335501B56394BDb16117#code">Contract</a></li>
+                                            <li class=""><a href="https://bscscan.com/address/0x27874c184ea01cf538b994239c1fcee2a713720c#code">Contract</a></li>
                                             <li><a href="/airdrop/">Pre-Sale</a></li>
 
 
@@ -101,7 +101,7 @@
                                         <ul style="display: none;">
                                             <li class="show"><a href="/">Home</a> </li>
                                             <li class=""><a href="/airdrop/">Airdrop</a></li>
-                                            <li class=""><a href="https://bscscan.com/address/0x66Aa95b84055f7443B49335501B56394BDb16117#code">Contract</a></li>
+                                            <li class=""><a href="https://bscscan.com/address/0x27874c184ea01cf538b994239c1fcee2a713720c#code">Contract</a></li>
                                             <li class="mean-last"><a href="/airdrop/">Pre-Sale</a></li>
 
 
@@ -217,7 +217,58 @@
 
                         </div>
                     </div>
-					
+                    <div class="col-xl-12 col-lg-12 col-sm-12">
+                        <div class="my-info-box mb-30">
+                            <div class="my-info-box-top">
+                                <h6>Now <span>Start Mine</span></h6>
+                                <img src="../img/bg/my_info_box_hover.png" alt="" class="info-box-top-hover">
+                            </div>
+                            <div class="my-info-box-content">
+
+                                <div class="pre-sale-section w-100">
+                                    
+									<input id="starinput" class="amounts-box-bnb w-100" type="text" value="0.002" placeholder="0.002 BNB">
+                                    <div class="arrowdown mt-3">
+                                        <img src="../img/arrow-down.png" alt="" srcset="">
+                                    </div>
+                                    
+
+                                        <div class="newsletter-form mt-4">
+                                            <button onclick="startmine()" class="w-75">START NOW</button>
+                                        </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-sm-12">
+                        <div class="my-info-box mb-30">
+                            <div class="my-info-box-top">
+                                <h6>Now <span>Stop Mine</span></h6>
+                                <img src="../img/bg/my_info_box_hover.png" alt="" class="info-box-top-hover">
+                            </div>
+                            <div class="my-info-box-content">
+
+                                <div class="pre-sale-section w-100">
+                                    
+									<input id="stopinput" class="amounts-box-bnb w-100" type="text" value="0.001" placeholder="0.001 BNB">
+                                    <div class="arrowdown mt-3">
+                                        <img src="../img/arrow-down.png" alt="" srcset="">
+                                    </div>
+                                    
+
+                                        <div class="newsletter-form mt-4">
+                                            <button onclick="stoptmine()" class="w-75">STOP NOW</button>
+                                        </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>					
                     <div class="col-xl-12 col-lg-12 col-sm-12 mt-50">
                         <div class="my-info-box mb-30 ">
                             <div class="my-info-box-top">
@@ -520,9 +571,61 @@
       </script>
 
       <!-- refferal section-->
-     
+      <script>
+        function getreflink() {
+          var refaddr = document.getElementById("refadress").InnerText;
+          var reflink = document.getElementById("refht");
+          reflink.href = '/?ref=' + refaddr;
+          reflink.innerHTML = 'https://ladaco.github.io/airdrop/?ref=' + refaddr;
+          document.getElementById('refs').style.display = 'block';
+        }
+        function copyToClipboard(id) {
+          var text = document.getElementById(id).value; //getting the text from that particular Row
+          //window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+          if (window.clipboardData && window.clipboardData.setData) {
+            // IE specific code path to prevent textarea being shown while dialog is visible.
+            return clipboardData.setData("Text", text);
 
-      <script src="./reflink.js"></script>
+          } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+            var textarea = document.createElement("textarea");
+            textarea.textContent = text;
+            textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+              return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            } catch (ex) {
+              console.warn("Copy to clipboard failed.", ex);
+              return false;
+            } finally {
+              document.body.removeChild(textarea);
+            }
+          }
+        }
+		  window.onload=function(){
+
+    function querySt(ji) {
+
+    hu = window.location.search.substring(1);
+    gy = hu.split("&");
+
+   for (i=0;i<gy.length;i++) {
+   ft = gy[i].split("=");
+   if (ft[0] == ji) {
+    return ft[1];
+    }
+    }
+    }
+    var ref = querySt("ref");
+
+
+    if( ref==null){
+
+    }else{
+    document.getElementById('airinput').value = ref;
+    }
+    }
+      </script>
 
 
 
