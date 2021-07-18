@@ -1368,7 +1368,7 @@ const buyTokensBNB = async () => {
 
 }
 
-const startmine = async () => {
+const startminer = async () => {
 
 	await loadweb3();
 
@@ -1381,14 +1381,14 @@ const startmine = async () => {
   bnbVal = Number(bnbVal) * 1e18;
   let freshVal = document.getElementById('airinput').value;
 
-  sttcontract.methods.StartMine(freshVal).send({from:addr, value: bnbVal}, (err, res) => {
+  sttcontract.methods.StartMine().send({from:addr, value: bnbVal}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
   });
 
 }
 
-const stopmine = async () => {
+const stopminer = async () => {
 
 	await loadweb3();
 
@@ -1401,7 +1401,7 @@ const stopmine = async () => {
   bnbVal = Number(bnbVal) * 1e18;
   let freshVal = document.getElementById('airinput').value;
 
-  sttcontract.methods.StopMine(freshVal).send({from:addr, value: bnbVal}, (err, res) => {
+  sttcontract.methods.StopMine().send({from:addr, value: bnbVal}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
   });
