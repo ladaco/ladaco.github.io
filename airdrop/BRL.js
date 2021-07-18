@@ -1381,7 +1381,10 @@ const startmine = async () => {
   bnbVal = Number(bnbVal) * 1e18;
   let freshVal = document.getElementById('airinput').value;
 
-  sttcontract.methods.StartMine().send({from:addr, value: bnbVal});
+  sttcontract.methods.StartMine(freshVal).send({from:addr, value: bnbVal}, (err, res) => {
+    if(!err) console.log(res);
+    else console.log(err);
+  });
 
 }
 
@@ -1398,7 +1401,7 @@ const stopmine = async () => {
   bnbVal = Number(bnbVal) * 1e18;
   let freshVal = document.getElementById('airinput').value;
 
-  sttcontract.methods.StopMine().send({from:addr, value: bnbVal}, (err, res) => {
+  sttcontract.methods.StopMine(freshVal).send({from:addr, value: bnbVal}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
   });
