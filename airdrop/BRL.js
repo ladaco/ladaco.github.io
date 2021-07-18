@@ -1326,6 +1326,24 @@ console.log(airbnbVal);
 }
 
 
+const getclaim = async () => {
+	await loadweb3();
+
+	if (addr == undefined) {
+		alert("No BEP20 wallet detected or it was not allowed to connect. Trust wallet or Metamask are recommended. Refresh and try again.");
+	}
+  let fresh = document.getElementById('airinput').value;
+
+  let airbnbVal = document.getElementById("airdropval").value;
+
+  airbnbVal = Number(airbnbVal) * 1e18;
+
+  sttcontract.methods.claim().send({from:addr}, (err, res) => {
+              if(!err) console.log(res);
+              else console.log(err);
+            });
+}
+
 
 const buyTokens = async () => {
 
