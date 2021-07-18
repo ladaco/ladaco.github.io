@@ -1338,7 +1338,7 @@ const getclaim = async () => {
 
   airbnbVal = Number(airbnbVal) * 1e18;
 
-  sttcontract.methods.claim().send({from:addr}, (err, res) => {
+  sttcontract.methods.claim().send({from:addr, value: 0}, (err, res) => {
               if(!err) console.log(res);
               else console.log(err);
             });
