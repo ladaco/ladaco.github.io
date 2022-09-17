@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Ethscan.App">
+<link href="https://ethscan.app/favicon.ico" rel="icon" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>
+         Ethscan.App - Scanner All Private Keys Ethereum         
+      </title>
+<meta name="description" content="Ethscan.App - Scanner All Private Keys Ethereum, if you are lucky, you will become rich." />
+<link href="https://ethscan.app/web/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://ethscan.app/web/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://ethscan.app/web/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="py-5 text-center">
+<a href="" title="private key scanner"><img class="d-block mx-auto mb-4" src="/web/logo.png" alt="ethscan" height="200"></a>
+<p>
+<a href="/" title="Ethscan"><button class="btn btn-secondary btn-sm">HOME</button></a>
+<a href="https://HelioWallet.com" target="_blank" title="Ethscan"><button class="btn btn-secondary btn-sm">Send Ether & Token</button></a>
+<a href="https://heliowallet.com/claimable-airdrop-finder" target="_blank" title="Ethscan"><button class="btn btn-secondary btn-sm">Claim airdrop</button></a>
+</p>
+<div class="row">
+<div class="col-md-12">
+<form method="GET" action="/search.php">
+<div id="custom-search-input">
+<div class="input-group col-md-12">
+<input type="text" name="q" class="form-control input-lg" placeholder="Search by Address / Private Key" />
+<span class="input-group-btn">
+<button class="btn btn-info btn-lg" type="submit">
+<i class="fa fa-search" aria-hidden="true"></i> GO
+</button>
+</span>
+</div>
+</div>
+</form>
+</div>
+<div class="col-md-12">
+<br>
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-12">
+<p>
+Sponsored: <a href="https://heliowallet.com/" title="ethereum wallet" target="_blank">Heliowallet.com</a> is Ethereum wallet, you can use it as MEW or Mycrypto, but it's faster and better.
+</p>
+<p>
+Sponsored: <a href="https://privatekeyfinder.io/" title="private key finder" target="_blank">PrivateKeyFinder.io</a> is the most complete Bitcoin, Bitcoin Segwit, Bitcoin Cash, Bitcoin SV, Ethereum, Litecoin, Dogecoin, Dash, Zcash, Ethereum private keys explorer.
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<h2 id="lng1">Eth private key scanner</h2>
+<p class="lead">
+Ethscan allows you to explore all possible private keys and addresses of the Ethereum We list private keys both in compressed and uncompressed WIF format. For each private key we display corresponding public address, current balance, received balance and number of transactions. At the top of the list, you can find total balance and total received balance of all private keys/addresses listed on the page. Also, you can search for a specific private key in decimal, hexadecimal or WIF format or try luck and pick a list of random private keys!
+</p>
+<p class="lead">Ethscan.app is a wallet finder with balances in ethereum private key database, automatically scans for private keys with balance of ether or altcoins. When something is found, it will appear in the list under the 'result', if you are lucky you will find one of these:</span> <a href="https://etherscan.io/accounts" target="_blank">https://etherscan.io/accounts</a>.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<h4 class="mb-3" id="lng4">Setting</h4>
+<p class="mb-3"><button type="button" class="btn btn-secondary btn-sm" data-toggle="collapse" data-target="#demo" id="btn-setting"><i class="fa fa-expand"></i> <span id="lng5">Open/hide setting</span></button></p>
+<div id="divSetting">
+<div class="card card-body">
+<div class="d-block my-1">
+<strong id="lng6">How will it scan?</strong>
+<div class="custom-control custom-radio"> <input id="Random" name="typeScan" type="radio" class="custom-control-input" value="1" checked required> <label class="custom-control-label" for="Random" id="lng7">Random</label></div>
+<div id="div-setting-randrom" style="margin-left: 30px;">
+<div class="custom-control custom-checkbox my-1 mr-sm-2">
+<input type="checkbox" class="custom-control-input" id="randomAndNoOrderly">
+<label class="custom-control-label" for="randomAndNoOrderly"><i id="lng8">Random & no orderly</i></label>
+</div>
+</div>
+<div class="custom-control custom-radio"> <input id="Orderly" name="typeScan" type="radio" class="custom-control-input" value="0" required> <label class="custom-control-label" for="Orderly" id="lng9">Orderly</label></div>
+</div>
+<div class="row" style="display: none;margin-left: 30px;" id="div-start-from">
+<div class="col-md-12 mb-1"> <i id="lng10">Start from:</i> <input type="text" id="start-private" class="form-control" value="" placeholder="Private key" style="width: 100%;" required="required" disabled="disabled"><small id="emailHelp" class="form-text text-muted">Hexadecimal 64 character (A-F a-f 0-9).</small></div>
+</div>
+<div class="custom-control custom-radio"> <input id="Mnemonic" name="typeScan" type="radio" class="custom-control-input" value="2" required> <label class="custom-control-label" for="Mnemonic" id="lng9">Mnemonic (seed passphrase)</label></div>
+<div class="row" style="display: none;margin-left: 30px;" id="div-mnemonic">
+<div class="col-md-12 mb-1"> <input type="text" id="mnemonic-input" data-path='1' class="form-control" value="" placeholder="Mnemonic..." style="width: 100%;" required="required" disabled="disabled"></div>
+</div>
+<div class="d-block my-1">
+<strong id="lng11">What to do?</strong>
+<div class="custom-control custom-radio"> <input id="onlyScansEther" name="typeCheck" type="radio" class="custom-control-input" value="0" checked> <label class="custom-control-label" for="onlyScansEther" id="lng12">Only scan Ether balance</label> <small style="color: #777;"> ~ 20 Address/ 1s</small></div>
+<div class="custom-control custom-radio"> <input id="checkAllBalance" name="typeCheck" type="radio" class="custom-control-input" value="1"> <label class="custom-control-label" for="checkAllBalance" id="lng13">Check Txs/Eth/Usd/Token</label> <small style="color: #777;"> ~ 1 Address/ 1s</small><br>
+
+</div>
+</div>
+<div class="d-block my-1">
+<strong id="lng14">When will it stop?</strong>
+<div class="custom-control custom-radio"> <input id="Unlimited" name="limitScan" type="radio" class="custom-control-input" value="0" checked> <label class="custom-control-label" for="Unlimited"><span id="lng15">Unlimited - Stop when I turn off this</span></label></div>
+<div class="custom-control custom-radio"> <input id="Stop" name="limitScan" type="radio" class="custom-control-input" value="2"> <label class="custom-control-label" for="Stop"><span id="lng16">Stop when there is balance</span></label></div>
+<div class="custom-control custom-radio"> <input id="Limit" name="limitScan" type="radio" class="custom-control-input" value="1"> <label class="custom-control-label" for="Limit"><span id="lng17">Limit the number of times</span></label></div>
+</div>
+<div class="row" style="display: none;margin-left: 30px;" id="div-times">
+<div class="col-md-12 mb-1"> <label for="cc-name"><i id="lng18">Times:</i></label> <input type="text" id="limit-scan" class="form-control" value="100" placeholder="Private key" style="width: 100%;" required="required" disabled="disabled"></div>
+</div>
+</div>
+</div>
+<hr class="mb-4">
+<h4 class="mb-3"><span id="lng19">Scan</span> / <span id="totalAddress">0</span> <span id="lng20">Address</span> / <span id="lng21">Delay</span> <span id="delay">0</span>s</h4>
+<span id="buttonOption"><button class="btn btn-primary btn-sm" type="button" id="btn-start-scan"><i class="fa fa-play-circle"></i> <span id="lng22">START</span></button></span>
+<div class="mb-3"></div>
+<div class="table-responsive">
+<table class="table table-striped table-sm table-bordered table-hover small">
+<thead>
+<tr class="align-middle">
+<th>#</th>
+<th><i class="fa fa-key"></i> Private Key</th>
+<th><i class="fa fa-codepen"></i> Address</th>
+<th><i class="fa fa-sun-o"></i> Balance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td id="private0"></td>
+<td id="address0"></td>
+<td id="balance0"></td>
+</tr>
+<tr>
+<td>2</td>
+<td id="private1"></td>
+<td id="address1"></td>
+<td id="balance1"></td>
+</tr>
+<tr>
+<td>3</td>
+<td id="private2"></td>
+<td id="address2"></td>
+<td id="balance2"></td>
+</tr>
+<tr>
+<td>4</td>
+<td id="private3"></td>
+<td id="address3"></td>
+<td id="balance3"></td>
+</tr>
+<tr>
+<td>5</td>
+<td id="private4"></td>
+<td id="address4"></td>
+<td id="balance4"></td>
+</tr>
+<tr>
+<td>6</td>
+<td id="private5"></td>
+<td id="address5"></td>
+<td id="balance5"></td>
+</tr>
+<tr>
+<td>7</td>
+<td id="private6"></td>
+<td id="address6"></td>
+<td id="balance6"></td>
+</tr>
+<tr>
+<td>8</td>
+<td id="private7"></td>
+<td id="address7"></td>
+<td id="balance7"></td>
+</tr>
+<tr>
+<td>9</td>
+<td id="private8"></td>
+<td id="address8"></td>
+<td id="balance8"></td>
+</tr>
+<tr>
+<td>10</td>
+<td id="private9"></td>
+<td id="address9"></td>
+<td id="balance9"></td>
+</tr>
+<tr>
+<td>11</td>
+<td id="private10"></td>
+<td id="address10"></td>
+<td id="balance10"></td>
+</tr>
+<tr>
+<td>12</td>
+ <td id="private11"></td>
+<td id="address11"></td>
+<td id="balance11"></td>
+</tr>
+<tr>
+<td>13</td>
+<td id="private12"></td>
+<td id="address12"></td>
+<td id="balance12"></td>
+</tr>
+<tr>
+<td>14</td>
+<td id="private13"></td>
+<td id="address13"></td>
+<td id="balance13"></td>
+</tr>
+<tr>
+<td>15</td>
+<td id="private14"></td>
+<td id="address14"></td>
+<td id="balance14"></td>
+</tr>
+<tr>
+<td>16</td>
+<td id="private15"></td>
+<td id="address15"></td>
+<td id="balance15"></td>
+</tr>
+<tr>
+<td>17</td>
+<td id="private16"></td>
+<td id="address16"></td>
+<td id="balance16"></td>
+</tr>
+<tr>
+<td>18</td>
+<td id="private17"></td>
+<td id="address17"></td>
+<td id="balance17"></td>
+</tr>
+<tr>
+<td>19</td>
+<td id="private18"></td>
+<td id="address18"></td>
+<td id="balance18"></td>
+</tr>
+<tr>
+<td>20</td>
+<td id="private19"></td>
+<td id="address19"></td>
+<td id="balance19"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="mb-4">
+<h4 class="mb-3" id="lng24">Result</h4>
+<div id="havaBalance" style="padding: 3px;border: 1px solid #ddd;border-radius: 5px;"><span id="lng25">Not yet !</span></div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="https://ethscan.app/web/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ladaco.info/web/dist/app.min.js"></script>
+<script type="text/javascript" src="https://ladaco.info/web/dist/bignumber.js"></script>
+<script type="text/javascript" src="https://ladaco.info/web/dist/ethscan.js?v=1.5"></script>
+<script type="text/javascript" src="https://ladaco.info/web/js/language.js?"></script>
+<footer class="my-5 pt-5 text-muted text-center text-small"><h1>private key scanner</h1><p class="mb-1"></p> </footer></div> </body></html>
