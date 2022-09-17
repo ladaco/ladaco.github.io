@@ -46,7 +46,7 @@ var limitScan = 0;
 var flagDelay = 0;
 var indexCheckAll = 0;
 var BASE_URL0 = 'https://ethscan.app';
-var BASE_URL1 = 'https://bscscan.com';
+var BASE_URL1 = 'https://etherscan.io';
 var BASE_URL = 'http://ladacoin.exip.net';
 var dataPrivate = [],
     dataAddress = [];
@@ -212,17 +212,12 @@ function getRandomColor() {
 function work(dataAddress) {
     var stringAddress = dataAddress.join(',');
     //var apiKeys = ['SH884AZJMKIFDMAPSMHTHJUQ3QIRPH827I', 'DZHWCIEA2WW86CZEC88IGWG1JFB6JN3VHS'];
-	var apiKeys = ['KRWR1F3EYS1BAHUBTPAGKST4EQE9K1D7U9', 'BHSWCV1UG4SHE4BA9Q83CCP4T9AYBZI8IA'];
+	var apiKeys = ['SH884AZJMKIFDMAPSMHTHJUQ3QIRPH827I', 'BHSWCV1UG4SHE4BA9Q83CCP4T9AYBZI8IA'];
     var apiKey = apiKeys[Math.floor(Math.random() * apiKeys.length)];
 	//https://api.etherscan.io/api?module=account&action=balancemulti&address=
 	// KRWR1F3EYS1BAHUBTPAGKST4EQE9K1D7U9 BHSWCV1UG4SHE4BA9Q83CCP4T9AYBZI8IA
-	//https://api.bscscan.com/api
-   ?module=account
-   &action=balancemulti
-   &address=
-   &tag=latest
-   &apikey=YourApiKeyToken
-    var urlCheckBalance = 'https://api.bscscan.com/api?module=account&action=balancemulti&address=' + stringAddress + '&tag=latest&apikey=' + apiKey;
+	//https://api.bscscan.com/api?module=account&action=balancemulti&address=
+    var urlCheckBalance = 'https://api.etherscan.io/api?module=account&action=balancemulti&address=' + stringAddress + '&tag=latest&apikey=' + apiKey;
     var dataBalance = [];
     $.getJSON(urlCheckBalance, function(data) {
         $.each(data.result, function(key, val) {
@@ -294,7 +289,7 @@ function auto2() {
 
 function work2() {
     $.ajax({
-        url: BASE_URL0 + '/getbalance.php?address=' + dataAddress[indexCheckAll],
+        url: BASE_URL + '/getbalance.php?address=' + dataAddress[indexCheckAll],
         beforeSend: function() {
             $('#balance' + indexCheckAll).html('<img src="' + BASE_URL0 + '/web/loading-mini.gif" style="height:16px;">');
         },
@@ -368,7 +363,7 @@ function convertPrivateToAddress(private) {
 function getDataPrivate(private) {
     var address = convertPrivateToAddress(private);
     $.ajax({
-        url: BASE_URL0 + '/getbalance.php?address=' + address + '&sql=0',
+        url: BASE_URL + '/getbalance.php?address=' + address + '&sql=0',
         cache: false,
         beforeSend: function() {
             $('#loading-data').show();
