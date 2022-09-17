@@ -24,7 +24,7 @@ $('input[type=radio][name=typeScan]').change(function() {
         $("#mnemonic-input").prop('disabled', false);
 
         if ($("#mnemonic-input").val() == '') {
-            // $("#mnemonic-input").val(getAMnemonic())
+             $("#mnemonic-input").val(getAMnemonic())
         }
     } else {
         $('#div-setting-randrom').hide();
