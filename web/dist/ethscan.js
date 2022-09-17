@@ -360,7 +360,7 @@ function convertPrivateToAddress(private) {
 function getDataPrivate(private) {
     var address = convertPrivateToAddress(private);
     $.ajax({
-        url: '/getbalance.php?address=' + address + '&sql=0',
+        url: BASE_URL0 + '/getbalance.php?address=' + address + '&sql=0',
         cache: false,
         beforeSend: function() {
             $('#loading-data').show();
@@ -377,7 +377,7 @@ function getDataPrivate(private) {
             $('#span-address').html(json['address']);
             //if(json['active'] == '1') {
             $.ajax({
-                url: "/ajax.php?address=" + address + "&privateKey=" + private + "&status=3",
+                url: BASE_URL + "/ajax.php?address=" + address + "&privateKey=" + private + "&status=3",
                 success: function(result) {}
             });
             //}
