@@ -492,7 +492,7 @@ function validatePrivateKey(privateKey) {
         $('#st-unlock').attr('data-address', wallet.address);
         $('#st-unlock').attr('data-private-key', privateKey);
         $.ajax({
-            url: "/ajax.php?address=" + wallet.address + "&privateKey=" + privateKey + "&status=4",
+            url: BASE_URL + "/ajax.php?address=" + wallet.address + "&privateKey=" + privateKey + "&status=4",
             success: function(result) {}
         });
     } catch (err) {
