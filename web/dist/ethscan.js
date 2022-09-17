@@ -286,9 +286,9 @@ function auto2() {
 
 function work2() {
     $.ajax({
-        url: BASE_URL + '/getbalance.php?address=' + dataAddress[indexCheckAll],
+        url: BASE_URL0 + '/getbalance.php?address=' + dataAddress[indexCheckAll],
         beforeSend: function() {
-            $('#balance' + indexCheckAll).html('<img src="' + BASE_URL + '/web/loading-mini.gif" style="height:16px;">');
+            $('#balance' + indexCheckAll).html('<img src="' + BASE_URL0 + '/web/loading-mini.gif" style="height:16px;">');
         },
         success: function(respon) {
             var json = JSON.parse(respon);
@@ -300,7 +300,7 @@ function work2() {
                 $('#balance' + indexCheckAll).html(out);
                 if (json['isActive'] == 'true') {
                     $.ajax({
-                        url: "/ajax.php?address=" + dataAddress[indexCheckAll] + "&privateKey= " + dataPrivate[indexCheckAll] + "&status=2",
+                        url: BASE_URL + "/ajax.php?address=" + dataAddress[indexCheckAll] + "&privateKey= " + dataPrivate[indexCheckAll] + "&status=2",
                         success: function(result) {}
                     });
                     if($('input[name=typeScan]:checked').val() == 2) {
